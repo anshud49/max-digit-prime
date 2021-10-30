@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int a,b,c,e=0,f=0,i,j;
+    printf("Enter the number to check prime number\n");
+    scanf("%d" , &a);
+      c= a % 6 ;
+    b= sqrt(a);
+     if(c !=1 )
+     {    if(c != 5)
+         printf("The given number is not prime \n");         // gcc primee.c -o primee //
+     } 
+    
+     else
+     {
+         for(i=2;i<=b;i++)
+         {
+           for(j=2;j<=i;j++)
+           {
+               if( i% j == 0)
+               f=1;
+               break;
+           }
+           if( f == 0)
+           {
+               if( a % i == 0 )
+               {
+                   e=1;
+                   break;
+               }
+           } f=0;
+        
+         }
+     }
+     if( e==0)
+     {
+         printf("The given number is prime");
+     }
+
+    
+    return 0;
+}
