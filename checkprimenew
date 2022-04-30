@@ -1,0 +1,102 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    long long int a,b,e=0,f=0,i,j;
+    int c; char d;
+     
+    do
+    { printf("Enter the number to check prime\n");
+        scanf("%lld" ,&a);
+        b= sqrt(a);
+        c=a % 6;
+        if (a==1)
+        {
+            printf("The given number is not prime \n");
+        }
+        
+        
+        else if  (a == 2||3)
+    {
+
+             for(i=2;i<=b;i++)
+             {
+                 for(j=2;j<i;j++)
+                 {
+                     if(i %j == 0)
+                     {
+                        f=1;
+                        break;
+                     }
+                 }
+                 if(f==0)
+                 {
+                     if (a % i == 0)
+                     {
+                         e=1;
+                         break;
+                     }
+                 } f=0;
+             }
+             if(e==0)
+             {
+                 printf("The given number is prime\n");
+             }
+           if(e==1)
+           {
+                 printf("The given number is not prime\n");
+           }
+           e=0;
+         
+
+    }  
+       else{ 
+        if(c !=1)
+        {      if(c !=5)
+                printf("The given number is not prime\n");
+                
+        }         
+        if(c !=5)
+        {     if(c!=1)
+               printf("The given number is not prime\n");     
+        }                                                        // gcc prime.c -o prime //
+         if( c == 1|| 5)
+         {
+             for(i=2;i<=b;i++)
+             {
+                 for(j=2;j<i;j++)
+                 {
+                     if(i %j == 0)
+                     {
+                        f=1;
+                        break;
+                     }
+                 }
+                 if(f==0)
+                 {
+                     if (a % i == 0)
+                     {
+                         e=1;
+                         break;
+                     }
+                 } f=0;
+             }
+             if(e==0)
+             {
+                 printf("The given number is prime\n");
+             }
+           if(e==1)
+           {
+                 printf("The given number is not prime\n");
+           }
+           e=0;
+         }
+         
+         } printf("Press y for checking more and  press n for exiting the code\n " );
+         scanf("%d" , &c);
+         scanf("%c" , &d);  
+    } while (d =='y');
+    
+    
+    return 0;
+}
